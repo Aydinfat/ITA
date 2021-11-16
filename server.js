@@ -33,5 +33,3 @@ app.post("/", function(req, res){
 app.listen(port, function(){
     console.log("Server läuft auf Port 5500");
 })
-
-// kleiner Bugfix für das Hochladen in die MongoDB

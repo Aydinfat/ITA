@@ -2,35 +2,99 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITA</title>
+    <title>ITA Datenbank</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Testseite</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+          <h1>Machinenübersicht</h1>
+      
     <form class="container" method="post" action="/">
         <div class="form-group">
             <input class="form-control" name="titel">
         </div>
         <div class="form-group">
-            <textarea class="form-control" name="content"></textarea>
-        </div>
-        <div>
-            <button>Zur DB hinzufügen</button>
-        </div>
+            <input type="text" class="content" autofocus placeholder="Info über die Maschine">
+                </div>
+    </form>
+    <div class="maschine">
+        
+    </div>
+    <form class="container" method="post" action="/">
+    <div class="einheiten" style="width: 400px;background-color: red;">
+        <form action="/index.html">
+            <label for="messgröße">Wähl eine Messgröße:   </label>
+            <select name="messung" id="messung">
+                <option value="-">-</option>
+                <option value="luftgeschwindigkeit">Luftgeschwindigkeit</option>
+                <option value="luftdruck">Luftdruck</option>
+                <option value="el-spannung">El. Spannung</option>
+                <option value="el-strom">El. Strom</option>
+                <option value="temperatur">Temperatur</option>
+            </select>
+            <select name="einheit">
+                <option value="-">-</option>
+                <option value="mm">mm/s</option>
+                <option value="m">m/h</option>
+                <option value="km">km/h</option>
+            </select>
+            <label for="messbereich">Messbereich:</label>
+            <label for="von"></label>
+            <input type="number" id="von" name="von" style="width: 30px;"> bis
+            <input type="number" name="von" id="von" style="width: 30px;"> 
+            <br> 
+            <label for="auflösung">Auflösung:</label>
+            <input type="text">
+            <br>
+            <label for="genauigkeit">Genauigkeit:</label>
+            <input type="text">
+            <br>
+            <label for="abtastrate">Abtastrate</label>
+            <input type="text">
+            <br>
+          </form>
+    </div>
+
+    <div class="information" style="width: 400px;background-color: beige;">
+        <label for="hersteller">Hersteller</label>
+        <input type="text">
+        <br>
+        <label for="modell">Modell</label>
+        <input type="text">
+        <br>
+        <label for="datenblatt">Datenblatt</label>
+        <input type="text">
+        <br>
+        <label for="ansprechspartner">Ansprechspartner</label>
+        <input type="text">
+        <br>
+        <label for="einsatzort">Einsatzort</label>
+        <input type="text">
+        <br>
+        <label for="anmerkung">Anmerkung</label>
+        <input type="text">
+    </div>
+
+    <div class="foro">
+        <form method="post" enctype="multipart/form-data" action="/upload">
+            <input type="file" name="file">
+            <input type="submit" value="Submit">
+        </form>        
+    </div>
+    <div>
+        <button>Add</button>
+    </div>
     </form>
 </body>
 </html>
 
 
-<!--1.) Inhalt zur Maschine fehlt (Infobereich)
-    2.) Design fehlt
+<!--1.) Design fehlt
         -Legende für die Einheiten
-        -Messgröße
-        -Messbereich
-        -Auflösung
-        -Genauigkeit
-        -Abtastrate
-    3.) User & Admin Anmeldemaske fehlt
-    4.) Python anbindung zwecks automatischer PDF Erzeugung (Python-Parser)
+    2.) User & Admin Anmeldemaske fehlt
+    3.) Python anbindung zwecks automatischer PDF Erzeugung (Python-Parser)
