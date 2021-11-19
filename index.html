@@ -4,35 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITA</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>ITA Datenbank</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
 </head>
 <body>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-      </ul>
-      <div class="ueberschrift">
-          <h1>ITA-Datenbank</h1>
-      </div>
-    <form class="container" method="post" action="/">
-        <div class="form-group">
-            <input class="form-control" name="titel">
-        </div>
-        <div class="form-group">
-            <input type="text" class="content" autofocus placeholder="Info über die Maschine">
-                </div>
-        <div>
-            <button>Add</button>
-        </div>
-    </form>
-    <div class="maschine">
-        
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+        <!--
+            Hier kommt das LOGO der RWTH hin
+        -->
+            <a class="navbar-brand" href="#">
+              <img src="./RWTH_logo.png" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="register_signUp.html">Eintrag</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./abfrage.html">Abfrage</a>
+              </li>
+            </ul>
+          </div>
+    </nav>
     </div>
 
-    <div class="messen">
+    <form class="container" method="post" action="/">
+        <div class="flex-container" style="width: 400px;background-color: beige;">
+            <label for="hersteller">Hersteller</label>
+            <input type="text">
+            <br>
+            <label for="modell">Modell</label>
+            <input type="text">
+            <br>
+            <label for="datenblatt">Datenblatt</label>
+            <input type="text">
+            <br>
+            <label for="ansprechspartner">Ansprechspartner</label>
+            <input type="text">
+            <br>
+            <label for="einsatzort">Einsatzort</label>
+            <input type="text">
+            <br>
+            <label for="anmerkung">Anmerkung</label>
+            <input type="text">
+            <br>
+            <label for="maschinenverantworlicher">Maschinenverantworlicher</label>
+            <input type="text" name="" id="">
+        </div>
+    </form>
+
+  <form class="container" method="post" action="/" style="position: relative;">
+    <div class="einheiten">
         <form action="/index.html">
-            <label for="messung">Wähl eine Messgröße:</label>
+            <label for="messgröße">Wähl eine Messgröße:   </label>
             <select name="messung" id="messung">
                 <option value="-">-</option>
                 <option value="luftgeschwindigkeit">Luftgeschwindigkeit</option>
@@ -41,25 +75,31 @@
                 <option value="el-strom">El. Strom</option>
                 <option value="temperatur">Temperatur</option>
             </select>
-            <br><br>
-            <input type="submit" value="Submit">
+            <select name="einheit">
+                <option value="-">-</option>
+                <option value="mm">mm/s</option>
+                <option value="m">m/h</option>
+                <option value="km">km/h</option>
+            </select>
+            <label for="messbereich">Messbereich:</label>
+            <label for="von"></label>
+            <input type="number" id="von" name="von" style="width: 30px;"> bis
+            <input type="number" name="von" id="von" style="width: 30px;"> 
+            <br> 
+            <label for="auflösung">Auflösung:</label>
+            <input type="text">
+            <br>
+            <label for="genauigkeit">Genauigkeit:</label>
+            <input type="text">
+            <br>
+            <label for="abtastrate">Abtastrate</label>
+            <input type="text">
+            <br>
+            <label for="linearität">Linearität</label>
+            <input type="text">
+            <br>
+            <label for="messprinzip">Messprinzip</label>
+            <input type="text">
+            <br>
           </form>
     </div>
-
-    <div class="messen">
-       
-    </div>
-</body>
-</html>
-
-
-<!--1.) Inhalt zur Maschine fehlt (Infobereich)
-    2.) Design fehlt
-        -Legende für die Einheiten
-        -Messgröße
-        -Messbereich
-        -Auflösung
-        -Genauigkeit
-        -Abtastrate
-    3.) User & Admin Anmeldemaske fehlt
-    4.) Python anbindung zwecks automatischer PDF Erzeugung (Python-Parser)
